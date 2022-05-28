@@ -1,0 +1,4 @@
+# Add cart item sku with suffixes to the regular cat item interface
+interface CartItemInterface {
+    cart_item_sku: String! @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\CartItemSku") @doc(description: "SKU of cart item with suffixes from selected custom options or other modifications")
+}
