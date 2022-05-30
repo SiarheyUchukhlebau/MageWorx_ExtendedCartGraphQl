@@ -1,4 +1,10 @@
-# Add cart item sku with suffixes to the regular cat item interface
 interface CartItemInterface {
-    cart_item_sku: String! @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\CartItemSku") @doc(description: "SKU of cart item with suffixes from selected custom options or other modifications")
+    cart_item_sku: String!
+    @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\CartItemSku")
+    @doc(description: "SKU of cart item with suffixes from selected custom options or other modifications")
+}
+input SetPaymentMethodOnCartInput {
+    custom_field: String
+    @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\CustomFieldOnPaymentMethod")
+    @doc(description: "Add custom field to payment method mutation and save it somwhere in DB")
 }
