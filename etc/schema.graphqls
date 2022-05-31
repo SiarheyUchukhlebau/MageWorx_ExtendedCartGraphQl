@@ -8,3 +8,7 @@ input SetPaymentMethodOnCartInput {
     @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\CustomFieldOnPaymentMethod")
     @doc(description: "Add custom field to payment method mutation and save it somwhere in DB")
 }
+type CustomerOrder {
+    my_custom_field: String
+    @resolver(class: "MageWorx\\ExtendedCartGraphQl\\Model\\Resolver\\OrderCustomField")
+}
